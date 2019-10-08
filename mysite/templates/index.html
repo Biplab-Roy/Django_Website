@@ -1,53 +1,118 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
-</head>
+{% extends 'base.html' %}
 
-<body>
-    <header>
-        <div class="main">
-            <div class="logo">
-                <img src="{%static 'pto/2.jpg' %}">
-            </div>
-            <div>
+{% block content %}
+
+<div class="title">
+    <h1><b>UPLOAD AND SCAN</b></h1>
+</div>
+<div class="button">
+    <ul>
+        <li class="login"><a href="#" class="option">SIGN IN</a>
+            <div class="submenu1">
                 <ul>
-                    <li class="active"><a href="http://127.0.0.1:8000">Home</a></li>
-                    <li><a href="/services/">Services</a></li>
-                    <li><a href="/gallery/">Gallery</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/signin_doctor/">Doctor</a></li>
+                    <li><a href="#">User</a></li>
                 </ul>
             </div>
-            <div class="title">
-                <h1><b>UPLOAD AND SCAN</b></h1>
-            </div>
-            <div class="button">
+        </li>
+        <li class="signup"><a href="#" class="option">SIGN UP</a>
+            <div class="submenu2">
                 <ul>
-                    <li class="login"><a href="#" class="option">SIGN IN</a>
-                        <div class="submenu1">
-                            <ul>
-                                <li><a href="#">Doctor</a></li>
-                                <li><a href="#">User</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="signup"><a href="#" class="option">SIGN UP</a>
-                        <div class="submenu2">
-                            <ul>
-                                <li><a href="#">Doctor</a></li>
-                                <li><a href="#">User</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="/signup_doctor/">Doctor</a></li>
+                    <li><a href="/signup_user/">User</a></li>
                 </ul>
             </div>
-        </div>
-    </header>
-</body>
+        </li>
+    </ul>
+</div>
 
-</html>
+<style>
+    .active a{
+        background-color: #fff;
+        color: black;
+    }
+    
+    .title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .title h1{
+        color: #fff;
+        font-size: 70px;
+    }
+    
+    .button{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%)
+    }
+    
+    .option{
+        border: 1px solid #fff;
+        padding: 10px 30px;
+        color: #fff;
+        margin: 5px;
+        text-decoration: none;
+        transition: 0.6s
+    }
+    
+    .option:hover{
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .submenu1, .submenu2{
+        display: none;;
+    }
+    
+    .login:hover .submenu1{
+        margin: 0;
+        display: block;
+        position: absolute;
+    }
+    
+    .login:hover .submenu1 ul{
+        border: none;
+        margin-left: 5px;
+        margin-top: 10px;
+        color: #000;
+        position: absolute;
+        display: block;
+        background: rgba(255, 255, 255, 0.347);
+    }
+    
+    
+    .login:hover .submenu1 ul li{
+        display: block;
+        margin: 10px;
+    }
+    
+    .signup:hover .submenu2{
+        margin: 0;
+        display: block;
+        position: absolute;
+    }
+    
+    .signup:hover .submenu2 ul{
+        border: none;
+        margin-left: 5px;
+        margin-top: 10px;
+        color: #000;
+        position: absolute;
+        display: block;
+        background: rgba(255, 255, 255, 0.347);
+    }
+    
+    
+    .signup:hover .submenu2 ul li{
+        display: block;
+        margin: 10px;
+    }
+</style>
+
+{% endblock %}

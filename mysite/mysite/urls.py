@@ -25,5 +25,7 @@ urlpatterns = [
     path('services/',views.services,name = 'services'),
     path('contact/',views.contact,name = 'contact'),
     path('login/',views.login,name = 'login'),
-    path('signup/',views.signup,name = 'signup'),
+    path('signup_doctor/',views.signup_d,name = 'signupDoctor'),
+    path('signup_user/',views.signup_u,name = 'signupUser'),
+    path('signin_doctor/',views.signin_d,name = 'signinDoctor'),
 ]

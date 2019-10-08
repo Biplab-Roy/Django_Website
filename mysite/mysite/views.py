@@ -12,5 +12,9 @@ def contact(request):
     return render(request, 'contact.html')
 def login(request):
     return render(request, 'login.html')
-def signup(request):
-    return render(request, 'signup.html')
+def signup_d(request):
+    return render(request, 'signup_doctor.html')
+def signup_u(request):
+    return render(request, 'signup_user.html')
+def signin_d(request):
+    return render(request, 'base.html')
