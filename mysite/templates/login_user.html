@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="data">
+    <form method="POST" action="#">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="class">
+                <label for="{{ field.id_for_label }}" class="label">{{field.label}}</label><br>
+                {{field}}
+            </div>
+        {% endfor %}
+        {% for msg in messages %}
+            <h4>{{msg}}</h4>
+        {% endfor %}
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+</div>
+<style>
+    .data{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-60%,-50%);
+        font-family: Arial;
+        color: rgb(255, 255, 255);
+    }
+
+    .class{
+        margin-top: 15px;
+        width: 50%;
+    }
+    
+    .class input{
+        width: 300px;
+        background: transparent;
+        outline: none;
+        border: none;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        border-bottom: 1px black solid;
+    }
+
+    .btn{
+        margin-top: 15px;
+        width: 100px;
+        padding: 5px;
+        font-size: 20px;
+        background-color: rgb(41, 179, 41);
+        font: bold;
+        border: 1px black solid;
+        border-radius: 5px;
+    }
+</style>
+{% endblock %}

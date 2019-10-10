@@ -16,18 +16,16 @@
             </div>
             <div>
                 <ul>
-                    <li class="active"><a href="http://127.0.0.1:8000">Home</a></li>
-                    <li><a href="/services/">Services</a></li>
-                    <li><a href="/gallery/">Gallery</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+                    <li class="activeh"><a href="http://127.0.0.1:8000">Home</a></li>
+                    <li class="actives"><a href="/services/">Services</a></li>
+                    <li class="activeg"><a href="/gallery/">Gallery</a></li>
+                    <li class="activea"><a href="/about/">About</a></li>
+                    <li class="activec"><a href="/contact/">Contact</a></li>
                 </ul>
             </div>
+                {% block content %}
 
-            {% block content %}
-
-            {% endblock %}
-
+                {% endblock %}
         </div>
     </header>
 </body>

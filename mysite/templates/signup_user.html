@@ -1,7 +1,67 @@
 
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+<div class="data">
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="class">
+                <label for="{{ field.id_for_label }}" class="label">{{field.label}}</label><br>
+                {{field}}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn">Register</button>
+    </form>
+    <div class="msg">
+        {% for message in messages %}
+            <h4>{{message}}</h4>
+        {% endfor %}
+    </div>
+</div>
+<style>
+    .data{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-60%,-50%);
+        font-family: Arial;
+        color: rgb(255, 255, 255);
+    }
 
+    .class{
+        margin-top: 15px;
+        width: 50%;
+    }
 
+    .class input,select{
+        width: 300px;
+        background: transparent;
+        outline: none;
+        border: none;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        border-bottom: 1px black solid;
+    }
+
+    .class select{
+        background: black;
+    }
+
+    .btn{
+        margin-top: 15px;
+        width: 100px;
+        padding: 5px;
+        font-size: 20px;
+        background-color: rgb(41, 179, 41);
+        font: bold;
+        border: 1px black solid;
+        border-radius: 5px;
+    }
+    .msg h4{
+        color: red;
+    }
+</style>
+                                               
 {% endblock %}
